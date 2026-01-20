@@ -1,7 +1,6 @@
-import type { NextConfig } from "next";
+import { createClient } from '@supabase/supabase-js';
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-export default nextConfig;
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
